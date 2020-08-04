@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        var rock = "Rock"
+        var paper = "Paper"
+        var scissor = "Scissor"
+        function computerPlay () {
+          let cChoise= Math.floor(Math.random()*3);
+              if (cChoise==0) {
+                return rock;}
+                else if (cChoise==1) {
+                return paper;}
+                else {
+                return scissor;}
+        }
+        function playRound(playerSelection, computerSelection){
+          let yourChoise = playerSelection;
+          if (yourChoise===rock){
+            switch (computerSelection){
+              case rock:
+                  return "It's a tie!";
+                  break;
+              case paper:
+                  return "Defeated";
+                  break;
+              case scissor:
+                  return "Victory!";
+                  break;
+            }
+          }
+          else if (yourChoise===paper){
+            switch (computerSelection){
+              case rock:
+                  return "Victory!";
+                  break;
+              case paper:
+                  return "It's a tie!";
+                  break;
+              case scissor:
+                  return "Defeated";
+                  break;
+            }
+          }
+          else if (yourChoise===scissor){
+            switch (computerSelection){
+              case rock:
+                  return "Defeated";
+                  break;
+              case paper:
+                  return "Victory!";
+                  break;
+              case scissor:
+                  return "It's a tie!";
+                  break;
+          }
+        }
+            else {
+            return ".";
+          }
+        }
+        const playerSelection = rock
+        const computerSelection = computerPlay
+        console.log(playRound(playerSelection, computerSelection))
+        function game() {
+        let i = 0;
+        do {
+            console.log(playRound(playerSelection, computerSelection));
+            i++;
+        } while (i < 5);
+    }
+      </script>
+</html>
